@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Suculentas Cozinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="gtop">
+  <div class="top-in">
+    <div class="brand">Suculentas<small>Tela da cozinha</small></div>
+    <div class="links"><a href="gestor.html">App do gestor</a><button type="button" id="kSair">Sair</button></div>
+  </div>
+</header>
+<main>
+  <div id="kLogin"></div>
+  <div id="kApp" hidden>
+    <div class="g-head"><h2 class="sec" style="margin-top:6px">Pedidos em andamento</h2><span class="hint">Conectado como <span id="kQuem"></span></span></div>
+    <div class="k-bar">
+      <label><input type="checkbox" id="k-som"> Aviso sonoro de pedido novo</label>
+      <label><input type="checkbox" id="k-auto"> Imprimir pedido novo sozinho</label>
+      <label>Formato <select id="k-fmt"><option value="c80">Cupom 80 mm</option><option value="c58">Cupom 58 mm</option><option value="a4">Folha comum</option></select></label>
+    </div>
+    <div class="err" id="kMsg"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="kitchen" id="kitchenList"></div>
+  </div>
+</main>
+<div id="toastRoot"></div>
+<div id="printArea"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="comum.js"></script>
+<script src="equipe.js"></script>
+<script src="cozinha.js"></script>
+</body>
+</html>

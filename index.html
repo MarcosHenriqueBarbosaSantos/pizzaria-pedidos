@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Suculentas Pizzaria Delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">Suculentas<span class="bars" aria-hidden="true"><i style="background:#2e8b57"></i><i style="background:#e9c43b"></i><i style="background:#3b6fd1"></i><i style="background:#f4ecd8"></i><i style="background:#111"></i><i style="background:#d33a3a"></i></span><small>Pizzaria Delivery</small></div>
+    <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">Carrinho <span class="badge num" id="cartCount">0</span></button>
+  </div>
+  <div class="ribbon"><div>• Retira ou delivery · Pedidos (11) 99026-8455 •</div></div>
+</header>
+
+<main>
+  <section id="tab-menu">
+    <div class="hero">
+      <div class="hero-txt">
+        <h1>Pizza suculenta, do forno pra sua casa</h1>
+        <p>Monte com até 3 sabores, escolha a massa e a borda recheada, e receba quentinha em casa.</p>
+        <div class="cta">
+          <button class="btn" data-jump="Especiais">Pedir agora</button>
+          <a class="btn ghost wa-link" href="https://wa.me/5511990268455" target="_blank" rel="noopener" style="text-decoration:none">Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <img class="hero-foto" src="forno.jpg" alt="Pizza recém-assada na pá, em frente ao forno a lenha aceso">
+    </div>
+    <div class="promo">
+      <strong>Ganhe dinheiro de volta a cada compra</strong>
+      <span>3% do valor dos itens vira saldo para o seu próximo pedido.</span>
+      <small>O saldo fica guardado neste aparelho e aparece no seu perfil · Combos e promoções na primeira seção do cardápio</small>
+    </div>
+    <div class="status-bar">
+      <span class="pill open" id="openPill">Aberto agora</span>
+      <span>Entregas das 18h às 23h · Entrega 40–55 min · Taxa R$ 7,90 · Mínimo R$ 35,00</span>
+    </div>
+    <input class="search" id="search" type="text" placeholder="Buscar sabor ou ingrediente…" aria-label="Buscar no cardápio">
+    <div class="cats" id="cats" style="margin-top:14px"></div>
+    <div id="menuList"></div>
+  </section>
+
+  <section id="tab-orders" hidden>
+    <h2 class="sec">Meus pedidos</h2>
+    <div id="ordersList"></div>
+  </section>
+
+  <section id="tab-perfil" hidden>
+    <h2 class="sec">Meu perfil</h2>
+    <form class="perfil" id="perfilForm">
+      <p class="hint">Salve seus dados para não digitar de novo a cada pedido. Eles ficam guardados só neste aparelho.</p>
+      <p style="margin:0">Saldo de cashback: <strong id="p-cash"></strong></p>
+      <div class="form-grid">
+        <label>Nome<input type="text" id="p-nome" autocomplete="name"></label>
+        <label>WhatsApp<input type="tel" id="p-tel" placeholder="(11) 90000-0000" autocomplete="tel"></label>
+        <label class="full">Endereço<input type="text" id="p-end" placeholder="Rua / avenida" autocomplete="street-address"></label>
+        <label>Número<input type="text" id="p-num"></label>
+        <label>Complemento<input type="text" id="p-comp" placeholder="Apto, bloco"></label>
+      </div>
+      <div class="row-btns"><button class="btn ok" type="submit">Salvar dados</button><button class="btn ghost" type="button" id="p-clear">Apagar meus dados</button></div>
+    </form>
+  </section>
+
+  <p class="staff-link">Equipe da pizzaria: <a href="cozinha.html">tela da cozinha</a> · <a href="gestor.html">app do gestor</a></p>
+</main>
+
+<nav class="bnav" id="bnav" aria-label="Navegação do cliente">
+  <button data-tab="menu" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Cardápio</span></button>
+  <button data-tab="orders" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><span>Pedidos</span></button>
+  <button data-tab="perfil" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>Perfil</span></button>
+</nav>
+
+<div id="modalRoot"></div>
+<div id="drawerRoot"></div>
+<div id="toastRoot"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="comum.js"></script>
+<script src="loja.js"></script>
+</body>
+</html>
