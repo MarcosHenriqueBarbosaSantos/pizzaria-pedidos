@@ -9,7 +9,7 @@ function bip(){
 const nomeItem=i=>i.nome||((i.k==="o"||Array.isArray(i.ids))?itemName(i):"Item");
 function comanda(o){
   const sub=o.itens.reduce((a,i)=>a+(+i.unit||0)*(+i.qtd||1),0);
-  return `<h1>SUCULENTAS</h1>
+  return `<h1>TESTE</h1>
     <div class="r"><span class="big">#${o.id}</span><span>${dm(o.criado)} ${fmtHora(o.criado)}</span></div>
     <div class="big">${o.tipo==="entrega"?"ENTREGA":"RETIRADA"}</div><hr>
     <div><b>${esc(o.cliente)}</b> · ${esc(o.tel)}</div>${o.tipo==="entrega"?`<div>${esc(o.end)}</div>`:""}<hr>

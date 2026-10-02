@@ -425,7 +425,7 @@ function reviewLink(v){
 }
 function genQR(){
   const link=reviewLink($("#rv-input").value);
-  $("#rv-cardname").textContent=$("#rv-nome").value||"Suculentas";
+  $("#rv-cardname").textContent=$("#rv-nome").value||"Teste";
   if(!link){$("#rv-err").textContent="Cole o link de avaliação ou o Place ID para gerar o QR code.";return}
   $("#rv-err").textContent=""; $("#rv-link").textContent=link;
   const box=$("#rv-qr"); box.innerHTML="";
@@ -434,7 +434,7 @@ function genQR(){
 }
 function initReview(){
   if(!$("#rv-input").value) $("#rv-input").value="ChIJEXEMPLO-troque-pelo-seu-place-id";
-  $("#rv-nome").value=$("#rv-nome").value==="Forno da Vila"?"Suculentas":$("#rv-nome").value;
+  $("#rv-nome").value=$("#rv-nome").value==="Forno da Vila"?"Teste":$("#rv-nome").value;
   $("#rv-gen").onclick=genQR;
   $("#rv-copy").onclick=()=>{const l=reviewLink($("#rv-input").value);if(!l)return;
     navigator.clipboard.writeText(l).then(()=>toast("Link copiado")).catch(()=>{const r=document.createRange();r.selectNodeContents($("#rv-link"));const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Link selecionado, use Ctrl+C")})};

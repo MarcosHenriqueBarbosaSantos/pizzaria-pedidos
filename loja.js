@@ -226,7 +226,7 @@ function renderOrders(){
     </article>`}).join(""):`<p class="empty">Você ainda não fez pedidos.</p>`;
 }
 function waOrderLink(o){
-  const txt=[`*Pedido #${o.id} – Suculentas*`,...o.itens.map(i=>`${i.qtd}x ${i.nome}${i.det?" ("+i.det+")":""} – ${brl(i.unit*i.qtd)}`),
+  const txt=[`*Pedido #${o.id} – Teste*`,...o.itens.map(i=>`${i.qtd}x ${i.nome}${i.det?" ("+i.det+")":""} – ${brl(i.unit*i.qtd)}`),
     `Total: ${brl(o.total)}`,`Cliente: ${o.cliente}${o.tel?" – "+o.tel:""}`,
     o.tipo==="entrega"?`Entrega: ${o.end}`:"Vou retirar no balcão",`Pagamento: ${o.pag}`].join("\n");
   return `https://wa.me/${WHATS}?text=${encodeURIComponent(txt)}`;
